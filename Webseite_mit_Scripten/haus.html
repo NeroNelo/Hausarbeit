@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title> Hausüberwachung</title>
+</head>
+<style>
+body {background-color: black;}
+h1 {color: white; font-size:400%;}
+td {color:yellow; font-size: 300%;}
+tr {size:200%;}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(document).ready(function(){
+		 $('#div_tuer').load("loadT.php");
+        setInterval(function() {
+            $('#div_tuer').load("loadT.php");
+        }, 1000);
+    });
+	
+	$(document).ready(function(){
+		 $('#div_fenster').load("loadF.php");
+        setInterval(function() {
+            $('#div_fenster').load("loadF.php");
+        }, 1000);
+    });
+	
+	$(document).ready(function(){
+		 $('#div_klingel').load("loadK.php");
+        setInterval(function() {
+            $('#div_klingel').load("loadK.php");
+        }, 1000);
+    });
+	
+		$(document).ready(function(){
+		 $('#div_temperatur').load("loadTemp.php");
+        setInterval(function() {
+            $('#div_temperatur').load("loadTemp.php");
+        }, 1000);
+    });
+</script>
+<body>
+
+<center>
+<h1> Hausüberwachung</h1>
+<table>
+	<tr>
+		<td width= "400"> Temperatur</td>
+		<td> <div id="div_temperatur"></div> </td>
+	</tr>
+	<tr>
+		<td width= "400"> Fenstersensor</td>
+		<td> <div id="div_fenster"></div> </td>
+	</tr>
+	<tr>
+		
+		<td width= "400"> Türsensor </td>
+		<td> <div id="div_tuer"></div> </td>
+	</tr>
+	<tr>
+		
+		<td width= "400"> Klingel</td>
+		<td> <div id="div_klingel"></div> </td>
+	</tr>
+</table>
+<br>
+<br>
+
+<video width="900" height="600" controls autoplay>
+	<source src="http://192.168.2.114:9000/s.ogg" type="video/ogg" />
+    
+</video>
+</center>
+</body>
+</html>
